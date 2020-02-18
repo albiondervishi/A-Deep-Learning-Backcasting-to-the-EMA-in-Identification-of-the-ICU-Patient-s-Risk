@@ -44,6 +44,8 @@ AUC_model <- function(DL_RTest) {
 
 load('Data_last_0_8H_Val_LAB.RData')
 Data_last_0_8H_Val_LAB$FLAG <- as.factor(Data_last_0_8H_Val_LAB$FLAG)
+Data_last_0_8H_Val_LAB <- Data_last_0_8H_Val_LAB[,-c(1,2)]
+
 
 set.seed(141)
 sample <- sample.int(n = nrow(Data_last_0_8H_Val_LAB), size = floor(.60*nrow(Data_last_0_8H_Val_LAB)))
@@ -72,7 +74,7 @@ last_0_8H_LEMA_deepLstat <- AUC_model(last_0_8H_LEMA_deepL_RTest)
 
 load('Data_last_8_24H_Val_LAB.RData')
 Data_last_8_24H_Val_LAB$FLAG <- as.factor(Data_last_8_24H_Val_LAB$FLAG)
-
+Data_last_8_24H_Val_LAB <- Data_last_8_24H_Val_LAB[,-c(1,2)]
 
 
 set.seed(41)
@@ -109,7 +111,7 @@ Backcasting_Last_8_24H_EMA_deepL_stat <- AUC_model(Backcasting_last_8_24H_EMA_de
 
 load('Data_last_24_48H_Val_LAB.RData')
 Data_last_24_48H_Val_LAB$FLAG <- as.factor(Data_last_24_48H_Val_LAB$FLAG)
-
+Data_last_24_48H_Val_LAB <- Data_last_24_48H_Val_LAB[,-c(1,2)]
 
 set.seed(41)
 sample <- sample.int(n = nrow(Data_last_24_48H_Val_LAB), size = floor(.75*nrow(Data_last_24_48H_Val_LAB)))
@@ -147,7 +149,7 @@ Backcasting_Last_24_48H_EMA_deepL_stat <- AUC_model(Backcasting_last_24_48H_EMA_
 
 load('Data_last_48_72H_Val_LAB.RData')
 Data_last_48_72H_Val_LAB$FLAG <- as.factor(Data_last_48_72H_Val_LAB$FLAG)
-dim(Data_last_48_72H_Val_LAB)
+Data_last_48_72H_Val_LAB <- Data_last_48_72H_Val_LAB[,-c(1,2)]
 
 set.seed(41)
 sample <- sample.int(n = nrow(Data_last_48_72H_Val_LAB), size = floor(.60*nrow(Data_last_48_72H_Val_LAB)))
